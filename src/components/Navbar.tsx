@@ -22,7 +22,7 @@ export default function Navbar() {
 
   return (
     <nav className="relative py-14">
-        <div className="max-w-[70%] mx-auto border-2 rounded-3xl px-10 py-4 bg-white/80 backdrop-blur-sm" style={{ borderColor: '#226DE0' }}>
+        <div className="max-w-[80%] mx-auto border-2 rounded-3xl px-10 py-4 bg-white/80 backdrop-blur-sm" style={{ borderColor: '#226DE0' }}>
           <div className="flex items-center justify-between">
             {/* Left Block: Logo + Navigation Links */}
             <div className="flex items-center gap-10">
