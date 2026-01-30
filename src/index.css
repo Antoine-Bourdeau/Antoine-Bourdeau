@@ -1,7 +1,26 @@
 @import "tailwindcss";
 
+@theme {
+  --color-abc-blue: #226DE0;
+  --color-abc-white: #FAF9F7;
+  --color-abc-black: #3F4C61;
+}
+
 @layer base {
   body {
     font-family: 'Space Grotesk', sans-serif;
+    color: var(--color-abc-black);
+    background-color: var(--color-abc-white);
+  }
+}
+
+@layer utilities {
+  .text-stroke-blue {
+    -webkit-text-stroke: 3px var(--color-abc-blue);
+    paint-order: stroke fill;
+  }
+  .text-stroke-black {
+    -webkit-text-stroke: 3px var(--color-abc-black);
+    paint-order: stroke fill;
   }
 }

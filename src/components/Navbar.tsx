@@ -21,7 +21,7 @@ export default function Navbar() {
   }
 
   return (
-    <nav className="relative py-14">
+    <nav className="relative pt-14 pb-8">
         <div className="max-w-[80%] mx-auto border-2 rounded-3xl px-10 py-4 bg-white/80 backdrop-blur-sm" style={{ borderColor: '#226DE0' }}>
           <div className="flex items-center justify-between">
             {/* Left Block: Logo + Navigation Links */}
@@ -42,10 +42,10 @@ export default function Navbar() {
                   key={link.name}
                   href={link.href}
                   onClick={(e) => handleSmoothScroll(e, link.href)}
-                  className="text-gray-800 transition-colors duration-200 text-xl font-normal"
-                  style={{ color: link.href === window.location.hash ? '#226DE0' : undefined }}
+                  className="transition-colors duration-200 text-xl font-normal"
+                  style={{ color: link.href === window.location.hash ? '#226DE0' : '#3F4C61' }}
                   onMouseEnter={(e) => e.currentTarget.style.color = '#226DE0'}
-                  onMouseLeave={(e) => e.currentTarget.style.color = link.href === window.location.hash ? '#226DE0' : '#1f2937'}
+                  onMouseLeave={(e) => e.currentTarget.style.color = link.href === window.location.hash ? '#226DE0' : '#3F4C61'}
                 >
                   {link.name}
                 </a>
@@ -66,9 +66,10 @@ export default function Navbar() {
           {/* Mobile Menu Button */}
           <button
             onClick={() => setIsMenuOpen(!isMenuOpen)}
-            className="md:hidden p-2 text-gray-700 transition-colors"
+            className="md:hidden p-2 transition-colors"
+            style={{ color: '#3F4C61' }}
             onMouseEnter={(e) => e.currentTarget.style.color = '#226DE0'}
-            onMouseLeave={(e) => e.currentTarget.style.color = '#374151'}
+            onMouseLeave={(e) => e.currentTarget.style.color = '#3F4C61'}
             aria-label="Toggle menu"
           >
             <svg className="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -90,9 +91,10 @@ export default function Navbar() {
                 key={link.name}
                 href={link.href}
                 onClick={(e) => handleSmoothScroll(e, link.href)}
-                className="block text-gray-700 transition-colors duration-200 font-medium py-2"
+                className="block transition-colors duration-200 font-medium py-2"
+                style={{ color: '#3F4C61' }}
                 onMouseEnter={(e) => e.currentTarget.style.color = '#226DE0'}
-                onMouseLeave={(e) => e.currentTarget.style.color = '#374151'}
+                onMouseLeave={(e) => e.currentTarget.style.color = '#3F4C61'}
               >
                 {link.name}
               </a>
