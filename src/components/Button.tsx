@@ -4,6 +4,7 @@ interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
   children: ReactNode
   icon?: ReactNode
   href?: string
+  padding?: string
 }
 
 export default function Button({ 
@@ -11,6 +12,7 @@ export default function Button({
   icon, 
   className = '',
   href,
+  padding = 'px-6 py-4',
   ...props 
 }: ButtonProps) {
   const buttonStyle = {
@@ -30,7 +32,7 @@ export default function Button({
     return (
       <a 
         href={href}
-        className={`inline-flex items-center gap-10 px-6 py-4 text-lg font-bold text-white transition-all duration-200 hover:scale-105 active:scale-95 ${className} group`}
+        className={`inline-flex items-center gap-10 ${padding} text-lg font-bold text-white transition-all duration-200 hover:scale-105 active:scale-95 ${className} group`}
         style={buttonStyle}
       >
         {buttonContent}
@@ -40,7 +42,7 @@ export default function Button({
 
   return (
     <button 
-      className={`inline-flex items-center gap-10 px-6 py-4 text-lg font-bold text-white transition-all duration-200 hover:scale-105 active:scale-95 ${className} group`}
+      className={`inline-flex items-center gap-10 ${padding} text-lg font-bold text-white transition-all duration-200 hover:scale-105 active:scale-95 ${className} group`}
       style={buttonStyle}
       {...props}
     >
