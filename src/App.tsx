@@ -1,11 +1,9 @@
 import Navbar from './components/Navbar'
-import Hero from './components/Hero'
 
 function App() {
   return (
     <div className="min-h-screen">
       <Navbar />
-      <Hero />
       
       {/* Footer */}
       <footer className="bg-gray-900 text-white py-8 px-6">
