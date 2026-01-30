@@ -72,17 +72,80 @@ function App() {
               Découvrir les services
             </Button>
           </div>
+
+          {/* Activity Cards Grid */}
+          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8 pt-20">
+            {[
+              { 
+                title: 'Développement Full-Stack', 
+                desc: 'Applications web sur-mesure, performantes et scalables.',
+                icon: (
+                  <div className="w-12 h-12 rounded-2xl bg-abc-blue/10 flex items-center justify-center text-abc-blue mb-4">
+                    <svg className="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9.75 17L9 21h6l-.75-4M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+                    </svg>
+                  </div>
+                )
+              },
+              { 
+                title: 'Intelligence Artificielle', 
+                desc: 'Agents IA et automatisation intelligente des processus.',
+                icon: (
+                  <div className="w-12 h-12 rounded-2xl bg-abc-blue/10 flex items-center justify-center text-abc-blue mb-4">
+                    <svg className="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 10V3L4 14h7v7l9-11h-7z" />
+                    </svg>
+                  </div>
+                )
+              },
+              { 
+                title: 'Product Design', 
+                desc: 'Interfaces premium centrées sur l\'utilisateur et la conversion.',
+                icon: (
+                  <div className="w-12 h-12 rounded-2xl bg-abc-blue/10 flex items-center justify-center text-abc-blue mb-4">
+                    <svg className="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M7 21a4 4 0 01-4-4V5a2 2 0 012-2h4a2 2 0 012 2v12a4 4 0 01-4 4zm0 0h12a2 2 0 002-2v-4a2 2 0 00-2-2h-2.343M11 7.343l1.657-1.657a2 2 0 012.828 0l2.829 2.829a2 2 0 010 2.828l-8.486 8.485M7 17h.01" />
+                    </svg>
+                  </div>
+                )
+              },
+              { 
+                title: 'Accompagnement CTO', 
+                desc: 'Conseil stratégique, audit technique et pilotage de projet.',
+                icon: (
+                  <div className="w-12 h-12 rounded-2xl bg-abc-blue/10 flex items-center justify-center text-abc-blue mb-4">
+                    <svg className="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4" />
+                    </svg>
+                  </div>
+                )
+              }
+            ].map((activity) => (
+              <div key={activity.title} className="p-8 rounded-[32px] border border-abc-blue/10 bg-abc-white/40 backdrop-blur-md hover:bg-abc-white hover:border-abc-blue/30 transition-all duration-300 text-left group shadow-sm hover:shadow-md">
+                {activity.icon}
+                <h3 className="text-xl font-bold text-abc-black mb-3 group-hover:text-abc-blue transition-colors leading-tight">{activity.title}</h3>
+                <p className="text-abc-black/70 text-sm leading-relaxed">{activity.desc}</p>
+              </div>
+            ))}
+          </div>
         </div>
       </section>
 
       {/* Services Section */}
-      <section id="services" className="min-h-screen py-20 px-6 flex items-center justify-center">
-        <div className="max-w-7xl mx-auto space-y-20">
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-12 pt-10">
+      <section id="services" className="min-h-screen py-32 px-6 flex items-center justify-center bg-abc-white">
+        <div className="max-w-7xl mx-auto space-y-24">
+          <div className="text-center space-y-6">
+            <h2 className="text-4xl md:text-5xl font-bold text-abc-black">Services Sur-Mesure</h2>
+            <p className="text-xl text-abc-black/60 max-w-2xl mx-auto">Des solutions concrètes pour accélérer votre croissance digitale.</p>
+          </div>
+
+          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-12">
             {[
               { 
                 title: 'Site vitrine', 
                 desc: 'Design moderne et responsive adapté à votre image',
+                rotate: '-rotate-z-12',
+                translate: 'translate-y-0',
                 icon: (
                   <svg className="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 20l4-2m0 0l4-2m-4 2l-4-2M9 10h.01M15 10h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
@@ -93,6 +156,8 @@ function App() {
               { 
                 title: 'Automatisation', 
                 desc: 'Optimisez vos processus avec l\'intelligence artificielle',
+                rotate: 'rotate-z-2',
+                translate: 'translate-y-12',
                 icon: (
                   <svg className="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 10V3L4 14h7v7l9-11h-7z" />
@@ -102,6 +167,8 @@ function App() {
               { 
                 title: 'Full-Stack', 
                 desc: 'Solutions complètes avec backend et base de données',
+                rotate: '-rotate-z-6',
+                translate: 'translate-y-0',
                 icon: (
                   <svg className="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 7v10c0 2.21 3.582 4 8 4s8-1.79 8-4V7M4 7c0 2.21 3.582 4 8 4s8-1.79 8-4M4 7c0-2.21 3.582-4 8-4s8 1.79 8 4m0 5c0 2.21-3.582 4-8 4s-8-1.79-8-4" />
@@ -111,6 +178,8 @@ function App() {
               { 
                 title: 'SEO', 
                 desc: 'Optimisation pour être visible sur Google',
+                rotate: 'rotate-z-3',
+                translate: 'translate-y-12',
                 icon: (
                   <svg className="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
@@ -118,22 +187,17 @@ function App() {
                 )
               }
             ].map((service) => (
-              <div key={service.title} className="relative group">
-                {/* Tab Header */}
-                <div className="absolute -top-5 left-8 z-10">
-                  <div className="bg-abc-white border-2 border-abc-blue rounded-full px-6 py-1.5 shadow-sm transform group-hover:-translate-y-1 transition-transform">
-                    <span className="text-abc-black font-bold text-sm whitespace-nowrap">{service.title}</span>
+              <div key={service.title} className={`relative group ${service.translate}`}>
+                <div className="absolute -top-6 left-1/2 -translate-x-1/2 z-10 w-full px-8">
+                  <div className={`bg-abc-white border-2 border-abc-blue rounded-2xl py-2 px-4 shadow-md transition-all duration-300 group-hover:scale-105 group-hover:-translate-y-1 ${service.rotate}`}>
+                    <span className="text-abc-black font-bold text-lg block text-center truncate">{service.title}</span>
                   </div>
                 </div>
-                
-                {/* Card Body */}
-                <div className="h-full pt-8 pb-10 px-8 rounded-[32px] border-2 border-abc-blue bg-abc-white shadow-lg group-hover:shadow-xl transition-all flex flex-col items-center text-center space-y-6">
-                  {/* Icon Square */}
-                  <div className="bg-abc-blue p-4 rounded-xl text-abc-white shadow-md transform group-hover:scale-110 transition-transform">
+                <div className="h-full pt-12 pb-10 px-8 rounded-[40px] border-2 border-abc-blue bg-abc-white shadow-xl transition-all duration-300 group-hover:shadow-2xl flex flex-col items-center text-center space-y-6">
+                  <div className="bg-abc-blue p-3 px-8 rounded-2xl text-abc-white shadow-lg transform transition-transform duration-300 group-hover:scale-110">
                     {service.icon}
                   </div>
-                  {/* Description */}
-                  <p className="text-abc-black font-medium leading-relaxed opacity-80">
+                  <p className="text-abc-black font-medium leading-relaxed max-w-[200px]">
                     {service.desc}
                   </p>
                 </div>
