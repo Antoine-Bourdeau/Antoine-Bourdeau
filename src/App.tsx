@@ -17,8 +17,8 @@ function App() {
       <Navbar />
       
       {/* Accueil Section */}
-      <section id="accueil" className="min-h-screen flex ">
-        <div className="max-w-7xl mx-auto text-center space-y-10">
+      <section id="accueil" className="h-screen relative flex flex-col justify-between overflow-hidden">
+        <div className="flex-1 flex flex-col justify-center items-center w-full mx-auto text-center space-y-6 -mt-12">
           {/* Trust Badge */}
           <div className="flex justify-center ">
             <Button 
@@ -41,7 +41,7 @@ function App() {
           </div>
 
           {/* Hero Title */}
-          <h1 className="text-6xl md:text-[100px] font-bold tracking-tight leading-[0.9] text-transparent text-stroke-black pt-2 pb-8">
+          <h1 className="text-5xl md:text-[80px] lg:text-[100px] font-bold tracking-tight leading-[0.9] text-transparent text-stroke-black pt-2 pb-4">
             Antoine Bourdeau
           </h1>
 
@@ -58,7 +58,7 @@ function App() {
           </div>
 
           {/* Hero CTA Buttons */}
-          <div className="flex flex-col sm:flex-row items-center justify-center gap-4 pt-4">
+          <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
             <Button 
                href="#contact"
                icon={<img src="/arrow.svg" alt="arrow" className="w-6 h-6" />}
@@ -74,57 +74,81 @@ function App() {
           </div>
 
           {/* Activity Cards Grid */}
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8 pt-20">
+          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-x-8 gap-y-12 items-end w-full max-w-[80%] mx-auto pt-12 pb-8">
             {[
               { 
-                title: 'Développement Full-Stack', 
-                desc: 'Applications web sur-mesure, performantes et scalables.',
+                title: 'Site vitrine', 
+                desc: 'Design moderne et responsive adapté à votre image.',
+                rotate: '-rotate-z-12',
+                isSmall: false,
                 icon: (
-                  <div className="w-12 h-12 rounded-2xl bg-abc-blue/10 flex items-center justify-center text-abc-blue mb-4">
-                    <svg className="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9.75 17L9 21h6l-.75-4M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
-                    </svg>
-                  </div>
+                  <svg className="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9.75 17L9 21h6l-.75-4M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+                  </svg>
                 )
               },
               { 
-                title: 'Intelligence Artificielle', 
-                desc: 'Agents IA et automatisation intelligente des processus.',
+                title: 'Automatisation', 
+                desc: 'Optimisez vos processus avec l\'intelligence artificielle.',
+                rotate: 'rotate-z-2',
+                isSmall: false,
                 icon: (
-                  <div className="w-12 h-12 rounded-2xl bg-abc-blue/10 flex items-center justify-center text-abc-blue mb-4">
-                    <svg className="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 10V3L4 14h7v7l9-11h-7z" />
-                    </svg>
-                  </div>
+                  <svg className="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 10V3L4 14h7v7l9-11h-7z" />
+                  </svg>
                 )
               },
               { 
-                title: 'Product Design', 
-                desc: 'Interfaces premium centrées sur l\'utilisateur et la conversion.',
+                title: 'Full-Stack', 
+                desc: 'Solutions complètes sur-mesure avec backend et base de données.',
+                rotate: '-rotate-z-6',
+                isSmall: false,
                 icon: (
-                  <div className="w-12 h-12 rounded-2xl bg-abc-blue/10 flex items-center justify-center text-abc-blue mb-4">
-                    <svg className="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M7 21a4 4 0 01-4-4V5a2 2 0 012-2h4a2 2 0 012 2v12a4 4 0 01-4 4zm0 0h12a2 2 0 002-2v-4a2 2 0 00-2-2h-2.343M11 7.343l1.657-1.657a2 2 0 012.828 0l2.829 2.829a2 2 0 010 2.828l-8.486 8.485M7 17h.01" />
-                    </svg>
-                  </div>
+                  <svg className="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M7 21a4 4 0 01-4-4V5a2 2 0 012-2h4a2 2 0 012 2v12a4 4 0 01-4 4zm0 0h12a2 2 0 002-2v-4a2 2 0 00-2-2h-2.343M11 7.343l1.657-1.657a2 2 0 012.828 0l2.829 2.829a2 2 0 010 2.828l-8.486 8.485M7 17h.01" />
+                  </svg>
                 )
               },
               { 
-                title: 'Accompagnement CTO', 
-                desc: 'Conseil stratégique, audit technique et pilotage de projet.',
+                title: 'SEO', 
+                desc: 'Optimisez votre présence en ligne et sur google avec des stratégies SEO.',
+                rotate: 'rotate-z-3',
+                isSmall: false,
                 icon: (
-                  <div className="w-12 h-12 rounded-2xl bg-abc-blue/10 flex items-center justify-center text-abc-blue mb-4">
-                    <svg className="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4" />
-                    </svg>
-                  </div>
+                  <svg className="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4" />
+                  </svg>
                 )
               }
             ].map((activity) => (
-              <div key={activity.title} className="p-8 rounded-[32px] border border-abc-blue/10 bg-abc-white/40 backdrop-blur-md hover:bg-abc-white hover:border-abc-blue/30 transition-all duration-300 text-left group shadow-sm hover:shadow-md">
-                {activity.icon}
-                <h3 className="text-xl font-bold text-abc-black mb-3 group-hover:text-abc-blue transition-colors leading-tight">{activity.title}</h3>
-                <p className="text-abc-black/70 text-sm leading-relaxed">{activity.desc}</p>
+              <div 
+                key={activity.title} 
+                className="relative group h-full"
+              >
+                {/* Tab Header */}
+                <div className={`absolute -top-6 left-1/2 -translate-x-1/2 z-10 w-full flex justify-center px-4 transition-all duration-300 group-hover:scale-105 group-hover:-translate-y-1 ${activity.rotate}`}>
+                  <Button 
+                    variant="secondary"
+                    className="pointer-events-none w-48"
+                    padding="px-4 py-1.5"
+                  >
+                    <span className="text-xs uppercase tracking-wider">{activity.title}</span>
+                  </Button>
+                </div>
+
+                {/* Card Body */}
+                <div className="h-full border-2 border-abc-blue bg-abc-white shadow-xl transition-all duration-300 group-hover:shadow-2xl flex flex-col items-center text-center space-y-4 rounded-[32px] pt-12 pb-8 px-6">
+                  {/* Icon Badge */}
+                  <div className="p-3 px-8 bg-abc-blue rounded-xl text-abc-white shadow-lg transform transition-transform duration-300 group-hover:scale-110">
+                    {activity.icon}
+                  </div>
+                  
+                  <div className="space-y-2 px-4 flex-1 flex flex-col justify-center">
+                    <p className="text-abc-black text-sm leading-relaxed max-w-[180px] mx-auto">
+                      {activity.desc}
+                    </p>
+                  </div>
+                </div>
               </div>
             ))}
           </div>
